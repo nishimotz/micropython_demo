@@ -15,7 +15,7 @@ def is_bright():
     return get_brightness() >= 900
 
 def is_present():
-    return get_distance() < 100.0
+    return (get_distance() + get_distance()) < 200.0
 
 def you_lose():
     sound.falling_sound()
