@@ -11,4 +11,7 @@ def get_distance():
         signaloff = time.ticks_us()
     while pin12.value():
         signalon = time.ticks_us()
-    return float(0.017 * (signalon - signaloff))
+    try:
+        return float(0.017 * (signalon - signaloff))
+    except NameError:
+        return 0.0
