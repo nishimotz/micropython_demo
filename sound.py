@@ -13,7 +13,7 @@ def sound_loop(r, tick=0.15):
         time.sleep(tick)
     pwm14.duty(0)
 
-notes_freq = [130,146,164,174,195,220,246,261]
+notes_freq = [130,164,195,261]
 
 def rising_sound():
     sound_loop(notes_freq)
