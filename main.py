@@ -6,7 +6,7 @@ from light import get_brightness
 _ = get_temperature()
 
 pin0 = Pin(0, Pin.IN)
-pin0.irq(trigger=Pin.IRQ_FALLING, handler=lambda p: print(p))
+#pin0.irq(trigger=Pin.IRQ_FALLING, handler=lambda p: print(p))
 
 def startup():
     tp = get_temperature()
@@ -25,3 +25,14 @@ def startup():
 
 startup()
 sound.rising_sound()
+
+import time
+while True:
+    for _ in range(100):
+        time.sleep(0.1)
+        if pin0.value() == 0:
+            print('user button pressed')
+            import sys
+            sys.exit()
+    import game
+    game.main()
